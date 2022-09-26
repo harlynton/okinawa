@@ -1,11 +1,11 @@
 <?php
 
-function okinawa_lista_clases() { ?>
+function okinawa_lista_clases($cantidad = -1) { ?>
   <ul class="lista-clases">
     <?php 
       $args = array(
         'post_type' => 'okinawa_clases',
-        'post_per_page' => 10
+        'post_per_page' => $cantidad 
       );
 
       $clases = new WP_Query($args);
