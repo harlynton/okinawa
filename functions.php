@@ -49,6 +49,11 @@ function okinawa_scripts_styles() {
     wp_enqueue_style('leafletCSS', 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.css', array(), '1.8.0');
   endif;
 
+  //bxslide:
+  if(is_page('inicio')):
+    wp_enqueue_style('bxSliderCSS', 'https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css', array(), '4.2.12');
+  endif;
+
   //Hoja de estilos principal:
   wp_enqueue_style('style', get_stylesheet_uri(), array('normalize', 'googleFont'), '1.0.0');
 
@@ -63,6 +68,11 @@ function okinawa_scripts_styles() {
   //Leaflet mapa (Contacto):
   if(is_page('contacto')):
     wp_enqueue_script('leafletJS','https://unpkg.com/leaflet@1.8.0/dist/leaflet.js', array('jquery'), '1.8.0', true);
+  endif;
+
+  //BxSlider:
+  if(is_page('inicio')):
+    wp_enqueue_script('bxSliderJS','https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js', array('jquery'), '4.2.12', true);
   endif;
     
   //Scripts personalizados:

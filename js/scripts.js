@@ -4,6 +4,15 @@ jQuery(document).ready( $ => {
     appendTo:'.site-header'
   });
 
+  //BxSlider:
+  if ($('.listado-testimoniales').length > 0) {
+    $('.listado-testimoniales').bxSlider({
+      auto:true,
+      mode:'fade',
+      controls:false
+    });
+  }
+
   //Leaflet maps (Contacto):
   const lat = document.querySelector('#lat').value;
   const lng = document.querySelector('#lng').value;
@@ -23,3 +32,19 @@ jQuery(document).ready( $ => {
     
   }
 });
+
+// Agrega posición fija de header al hacer scroll:
+window.onscroll = () => {
+  const scroll = window.scrollY;
+  const headerNav = document.querySelector('.barra-nav');
+  const documentBody = document.querySelector('body');
+
+  //Si la cantidad de scroll es mayor al valor determinado, agregar clase:
+  if (scroll > 300) {
+    headerNav.classList.add('fixed-top');
+    documentBody.classList.add('ft-activo');
+  }else{
+    headerNav.classList.remove('fixed-top');
+    documentBody.classList.remove('ft-activo');
+  }
+}

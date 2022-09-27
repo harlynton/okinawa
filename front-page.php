@@ -88,4 +88,46 @@
   </div>
 </section>
 
+<section class="testimoniales">
+  <h2 class="text-center texto-blanco">Testimoniales</h2>
+  <div class="contenedor-testimoniales">
+    <ul class="listado-testimoniales">
+      <?php
+        $args = array(
+          'post_type'=>'testimoniales',
+          'post_per_page'=>10
+        );
+        $testimoniales = new WP_Query($args);
+        while($testimoniales->have_posts()):$testimoniales->the_post();
+      ?>
+        <li class="testimonial text-center">
+          <blockquote>
+            <?php the_content(); ?>
+          </blockquote>
+          <footer class="testimonial-footer">
+            <?php the_post_thumbnail('thumbnail');?>
+            <p><?php the_title(); ?></p>
+          </footer>
+        </li>
+      <?php endwhile; wp_reset_postdata(); ?>
+    </ul>
+  </div>
+</section>
+<section class="blog contenedor seccion">
+  <h2 class="text-center texto-titulo">Nuestro Blog</h2>
+  <p class="text-center">titulo de prueba</p>
+  <ul class = "listado-blog">
+    <?php 
+      $args = array(
+        'post_type' => 'post',
+        'post_per_page' => 4
+      );
+      $blog = new WP_Query($args);
+      while($blog->have_posts()): $blog->the_post();
+        get_template_part('template-parts/loop', 'blog');
+      endwhile; wp_reset_postdata(); 
+    ?>
+  </ul>
+</section>
+
 <?php get_footer();?>

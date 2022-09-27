@@ -12,7 +12,7 @@
   <div class="contenedor header-grid">
     <div class="barra-nav">
       <div class="logo">
-        <a href = '/'> <img src="<?php echo get_template_directory_uri();?>/img/logo_header.png" alt="Logo sitio"> </a> 
+        <a href = "<?php echo esc_url(site_url('/')) ?>"> <img src="<?php echo get_template_directory_uri();?>/img/logo_header.png" alt="Logo sitio"> </a> 
       </div>
       <?php 
         $args = array(
