@@ -58,7 +58,7 @@
 <section class="instructores">
   <div class="contenedor seccion">
     <h2 class="text-center texto-titulo">Nuestros instructores</h2>
-    <p class="text-center">Lorem ipsum bla bla bla</p>
+    <p class="text-center"></p>
     <ul class="listado-instructores">
       <?php 
         $args = array(
@@ -115,7 +115,7 @@
 </section>
 <section class="blog contenedor seccion">
   <h2 class="text-center texto-titulo">Nuestro Blog</h2>
-  <p class="text-center">titulo de prueba</p>
+  <p class="text-center"></p>
   <ul class = "listado-blog">
     <?php 
       $args = array(
