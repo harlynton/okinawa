@@ -26,9 +26,6 @@
     <div class="tagline text-center">
       <h1><?php the_field('encabezado_hero');?></h1>
       <p><?php the_field('contenido_hero');?></p>
-
-
-      <button type="button" class = "btn-saber"><a href="<?php echo get_permalink( get_page_by_path( 'mateo' ) )?>">Quiero ayudar</a></button> 
     </div>
   </div>
 </header>
